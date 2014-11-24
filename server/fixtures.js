@@ -14,6 +14,17 @@ if (Posts.find().count() === 0) {
 
   var naa = Meteor.users.findOne(naaId);
 
+  for (var i = 0; i < 10; i++) {
+    Posts.insert({
+      title: 'Test post #' + i,
+      author: naa.profile.name,
+      userId: naa._id,
+      url: 'http://microm.com/test-' + i,
+      submitted: new Date(now - i * 3600 * 1000),
+      commentsCount: 0
+    });
+  }  
+
   var micromId = Posts.insert({
     title: 'Introducing Microm',
     userId: naa._id,
