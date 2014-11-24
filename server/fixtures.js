@@ -19,7 +19,8 @@ if (Posts.find().count() === 0) {
     userId: naa._id,
     author: naa.profile.name,
     url: 'http://microm.com',
-    submitted: new Date(now - 7 * 3600 * 1000)
+    submitted: new Date(now - 7 * 3600 * 1000),
+    commentsCount: 2
   });
 
   Comments.insert({
@@ -40,16 +41,28 @@ if (Posts.find().count() === 0) {
   
   Posts.insert({
     title: 'Introducing Telescope',
-    url: 'http://sachagreif.com/introducing-telescope/'
+    url: 'http://sachagreif.com/introducing-telescope/',
+    userId: army._id,
+    author: army.profile.name,
+    submitted: new Date(now - 5 * 3600 * 1000),
+    commentsCount: 0
   });
 
   Posts.insert({
     title: 'Meteor',
-    url: 'http://meteor.com'
+    url: 'http://meteor.com',
+    userId: army._id,
+    author: army.profile.name,
+    submitted: new Date(now - 5 * 3600 * 1000),
+    commentsCount: 0
   });
   
   Posts.insert({
     title: 'The Meteor Book',
-    url: 'http://themeteorbook.com'
+    url: 'http://themeteorbook.com',
+    userId: army._id,
+    author: army.profile.name,
+    submitted: new Date(now - 5 * 3600 * 1000),
+    commentsCount: 0
   });
 }
