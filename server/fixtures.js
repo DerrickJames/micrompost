@@ -21,7 +21,9 @@ if (Posts.find().count() === 0) {
       userId: naa._id,
       url: 'http://microm.com/test-' + i,
       submitted: new Date(now - i * 3600 * 1000),
-      commentsCount: 0
+      commentsCount: 0,
+      upVoters: [],
+      votes: 0
     });
   }  
 
@@ -31,7 +33,9 @@ if (Posts.find().count() === 0) {
     author: naa.profile.name,
     url: 'http://microm.com',
     submitted: new Date(now - 7 * 3600 * 1000),
-    commentsCount: 2
+    commentsCount: 2,
+    upVoters: [],
+    votes: 0
   });
 
   Comments.insert({
@@ -56,7 +60,9 @@ if (Posts.find().count() === 0) {
     userId: army._id,
     author: army.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upVoters: [],
+    votes: 0
   });
 
   Posts.insert({
@@ -65,7 +71,9 @@ if (Posts.find().count() === 0) {
     userId: army._id,
     author: army.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upVoters: [],
+    votes: 0
   });
   
   Posts.insert({
@@ -74,6 +82,8 @@ if (Posts.find().count() === 0) {
     userId: army._id,
     author: army.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upVoters: [],
+    votes: 0
   });
 }
